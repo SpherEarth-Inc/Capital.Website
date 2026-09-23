@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { FinancingSolution } from "@/lib/content/financing-solutions";
-import { cn } from "@/lib/utils";
+import { cn, sitePath } from "@/lib/utils";
 
 const layoutClass: Record<FinancingSolution["layout"], string> = {
   feature: "aspect-[3/5]",
@@ -35,7 +35,7 @@ export function FinancingPathwayCard({
   const body = (
     <>
       <Image
-        src={solution.image}
+        src={sitePath(solution.image)}
         alt=""
         fill
         className="object-cover object-[center_20%] transition duration-500 ease-out group-hover:scale-[1.05]"

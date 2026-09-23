@@ -1,3 +1,5 @@
+import { sitePath } from "@/lib/utils";
+
 export type FinancingSolutionLayout = "feature" | "default";
 
 export interface FinancingSolution {
@@ -20,7 +22,7 @@ export const financingSolutions: FinancingSolution[] = [
     slug: "working-capital",
     title: "Working capital & growth",
     tagline: "Inventory, payroll, and expansion.",
-    image: "/images/home-hero2.png",
+    image: sitePath("/images/home-hero2.png"),
     href: "/pre-assessment",
     ctaLabel: "Begin Pre-Assessment",
     details: [
@@ -33,7 +35,7 @@ export const financingSolutions: FinancingSolution[] = [
     slug: "equipment",
     title: "Equipment & assets",
     tagline: "Machinery, fleet, and tech.",
-    image: "/images/equipment-finance.jpg",
+    image: sitePath("/images/equipment-finance.jpg"),
     href: "/pre-assessment",
     ctaLabel: "Begin Pre-Assessment",
     details: [
@@ -46,7 +48,7 @@ export const financingSolutions: FinancingSolution[] = [
     slug: "receivables",
     title: "Invoice & receivables",
     tagline: "Factoring and ABL facilities.",
-    image: "/images/invoice-finance.jpg",
+    image: sitePath("/images/invoice-finance.jpg"),
     href: "/pre-assessment",
     ctaLabel: "Begin Pre-Assessment",
     details: [
@@ -59,7 +61,7 @@ export const financingSolutions: FinancingSolution[] = [
     slug: "contract",
     title: "Contract & PO finance",
     tagline: "Mobilize awarded work.",
-    image: "/images/purchase-order.jpg",
+    image: sitePath("/images/purchase-order.jpg"),
     href: "/pre-assessment",
     ctaLabel: "Begin Pre-Assessment",
     details: [
@@ -72,7 +74,7 @@ export const financingSolutions: FinancingSolution[] = [
     slug: "acquisition",
     title: "Expansion & acquisition",
     tagline: "Buyouts and new locations.",
-    image: "/images/how-it-works.png",
+    image: sitePath("/images/how-it-works.png"),
     href: "/pre-assessment",
     ctaLabel: "Begin Pre-Assessment",
     details: [
@@ -85,7 +87,7 @@ export const financingSolutions: FinancingSolution[] = [
     slug: "enterprise",
     title: "Mid-market & enterprise",
     tagline: "$1M–$10M+ mandates.",
-    image: "/images/home-hero.png",
+    image: sitePath("/images/home-hero.png"),
     href: "/enterprise-finance",
     ctaLabel: "Discuss a $10M+ requirement",
     details: [

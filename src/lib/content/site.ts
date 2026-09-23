@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { env } from "@/lib/env";
+import { sitePath } from "@/lib/utils";
 
 export const siteConfig = {
   name: "SpherEarth Capital & Financial Solutions",
@@ -23,8 +24,8 @@ export const siteConfig = {
 } as const;
 
 export const siteAssets = {
-  homeHero: "/images/home-hero.png",
-  howItWorks: "/images/how-it-works.png",
+  homeHero: sitePath("/images/home-hero.png"),
+  howItWorks: sitePath("/images/how-it-works.png"),
 } as const;
 
 export function createMetadata({
