@@ -1,6 +1,6 @@
-import { redirect } from "next/navigation";
+import { ClientRedirect } from "@/components/util/client-redirect";
 
 /** Legacy URL → financing pathways page. */
 export default function FinancingSolutionsPage() {
-  redirect("/financing");
+  return <ClientRedirect href="/financing" />;
 }

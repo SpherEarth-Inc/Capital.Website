@@ -35,7 +35,28 @@ npm run dev
 4. Set env vars from `.env.example`
 5. Point custom domain `capital.spherearth.ca` to the service
 
-`output: "standalone"` is enabled in `next.config.ts` for efficient Node deployment.
+`output: "standalone"` is used for Railway. GitHub Pages uses a static export (`output: "export"`) when `GITHUB_PAGES=true`.
+
+## GitHub Pages
+
+Preview/staging URL: [spherearth-inc.github.io/Capital.Website](https://spherearth-inc.github.io/Capital.Website)
+
+1. In the repo on GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Push to `main` (or run the **Deploy GitHub Pages** workflow manually).
+3. The workflow sets `GITHUB_PAGES`, `NEXT_PUBLIC_BASE_PATH=/Capital.Website`, and the Pages site URL for metadata.
+
+Local static export (matches CI):
+
+```bash
+# PowerShell
+$env:GITHUB_PAGES="true"
+$env:NEXT_PUBLIC_BASE_PATH="/Capital.Website"
+$env:NEXT_PUBLIC_SITE_URL="https://spherearth-inc.github.io/Capital.Website"
+npm run build:gh-pages
+# Output in ./out — serve with any static file server
+```
+
+Production Railway builds omit those variables and keep the Node standalone server.
 
 ## Backend integration
 

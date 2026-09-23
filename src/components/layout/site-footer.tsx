@@ -1,9 +1,18 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SiteLogo } from "@/components/layout/site-logo";
 import { footerNavigation } from "@/lib/content/navigation";
 import { siteConfig } from "@/lib/content/site";
 
 export function SiteFooter() {
+  const pathname = usePathname();
+
+  if (pathname.startsWith("/pre-assessment")) {
+    return null;
+  }
+
   const year = new Date().getFullYear();
 
   return (

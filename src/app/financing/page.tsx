@@ -1,5 +1,4 @@
-import { FinancingPathwaysSection } from "@/components/sections/financing-pathways-section";
-import { financingSolutions } from "@/lib/content/financing-solutions";
+import { FinancingPageContent } from "@/app/financing/financing-page-content";
 import { createMetadata } from "@/lib/content/site";
 
 export const metadata = createMetadata({
@@ -9,18 +8,6 @@ export const metadata = createMetadata({
   path: "/financing",
 });
 
-export default async function FinancingPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ pathway?: string }>;
-}) {
-  const { pathway } = await searchParams;
-
-  return (
-    <FinancingPathwaysSection
-      solutions={financingSolutions}
-      sectionId="financing-page"
-      initialPathwaySlug={pathway ?? null}
-    />
-  );
+export default function FinancingPage() {
+  return <FinancingPageContent />;
 }

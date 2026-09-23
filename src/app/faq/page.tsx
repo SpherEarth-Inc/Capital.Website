@@ -1,6 +1,6 @@
-import { redirect } from "next/navigation";
+import { ClientRedirect } from "@/components/util/client-redirect";
 
 /** FAQ lives on the homepage after financing pathways. */
 export default function FaqPage() {
-  redirect("/#faq");
+  return <ClientRedirect href="/#faq" />;
 }
