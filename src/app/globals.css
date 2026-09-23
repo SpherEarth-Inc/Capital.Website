@@ -1,0 +1,125 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-space-grotesk);
+  --font-heading: var(--font-space-grotesk);
+  --color-brand-green: var(--brand-green);
+  --color-brand-amber: var(--brand-amber);
+  --color-brand-navy: var(--brand-navy);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-surface-muted: var(--surface-muted);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: oklch(0.2 0.02 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.02 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.02 250);
+  --primary: oklch(0.22 0.04 250);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.97 0.005 240);
+  --secondary-foreground: oklch(0.22 0.04 250);
+  --muted: oklch(0.97 0.005 240);
+  --muted-foreground: oklch(0.48 0.02 250);
+  --surface-muted: oklch(0.98 0.004 240);
+  --accent: #009900;
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.008 240);
+  --input: oklch(0.92 0.008 240);
+  --ring: #009900;
+  --brand-navy: oklch(0.22 0.04 250);
+  --brand-green: #009900;
+  --brand-amber: oklch(0.72 0.16 65);
+  --radius: 0.875rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-semibold tracking-tight text-brand-navy;
+  }
+}
+
+@layer utilities {
+  .font-logo {
+    font-family: var(--font-logo-serif), Georgia, "Times New Roman", serif;
+  }
+  .section-padding {
+    @apply py-14 md:py-20;
+  }
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-10 xl:px-12;
+  }
+  .site-width {
+    @apply mx-auto w-full max-w-[1600px];
+  }
+  .content-width {
+    @apply w-full max-w-4xl;
+  }
+  .card-surface {
+    @apply rounded-2xl border border-border/80 bg-white shadow-sm;
+  }
+  .elevated-hover {
+    @apply transition-[box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none motion-reduce:transition-none;
+  }
+  .fee-calculator-enter {
+    animation: fee-calculator-enter 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.12s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fee-calculator-enter {
+      animation: none;
+    }
+  }
+}
+
+@keyframes fee-calculator-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2.75rem, 0) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
